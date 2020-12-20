@@ -9,7 +9,7 @@ $("#magnifying-glass").on("click", function(event) {
     
     var APIKey = "9b97bdc0a57667e94c3b8958a0c57307";
     var cityName = $("#city-name").val().trim();
-    var queryWeatherNow = "https://api.openweathermap.org/data/2.5/weather?q=" + cityName + "&appid=" + APIKey;
+    var queryWeatherNow = "https://api.openweathermap.org/data/2.5/weather?q=" + cityName + "&units=imperial&appid=" + APIKey;
 
     $.ajax({
       url: queryWeatherNow,
@@ -18,9 +18,37 @@ $("#magnifying-glass").on("click", function(event) {
     .then(function(response) {
         console.log(queryWeatherNow);
         console.log(response);
+
+        var curDiv = $("#resultDiv");
+        var cityName = response.name;
+        var dateNow = new Date(response.dt *1000);
+        dateNow = dateNow.toLocaleString();
+        console.log(cityName);
+        var resultCity = $("<h1>").text(cityName + " (" + dateNow + ")");
+        curDiv.append(resultCity);
+
+        var tempNow = response.main.temp;
+        console.log(tempNow);
+        var resultTempNow = $("<p>").text("Temperature: " + tempNow + "°F");
+        curDiv.append(resultTempNow);
+
+        var humNow = response.main.humidity;
+        console.log(humNow);
+        var resultHumNow = $("<p>").text("Humidity: " + humNow + "%");
+        curDiv.append(resultHumNow);
+
+        var windNow = response.wind.speed;
+        console.log(windNow);
+        var resultWindNow = $("<p>").text("Wind Speed: " + windNow + " MPH");
+        curDiv.append(resultWindNow);
+
+        // var uviNow = response.wind.speed;
+        // console.log(uviNow);
+        // var resultUVINow = $("<p>").text("UV Index: " + UVINow);
+        // curDiv.append(resultUVINow);
     })
 
-    var queryForecast = "http://api.openweathermap.org/data/2.5/forecast?q=" + cityName + "&cnt=5&appid=" + APIKey;
+    var queryForecast = "http://api.openweathermap.org/data/2.5/forecast?q=" + cityName + "&units=imperial&cnt=5&appid=" + APIKey;
 
     $.ajax({
         url: queryForecast,
