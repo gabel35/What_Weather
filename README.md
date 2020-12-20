@@ -24,7 +24,7 @@ Type a city you would like to know the weather for in the search bar. Upon click
 Please follow the following link to the application!
 !(https://gabel35.github.io/What_Weather/)
 
-![code quiz](./Assets/what-weather.PNG)
+![weather-app](./Assets/what-weather.PNG)
 
 
 ## Credits
