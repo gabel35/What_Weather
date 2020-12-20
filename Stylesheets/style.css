@@ -6,6 +6,15 @@ header{
     color: rgb(223, 99, 17);
 }
 
+input{
+    width: 100%;
+    background-color: rgba(239, 250, 255, 0.753);
+}
+#magnifying-glass{
+    width: 100%;
+    background-color: rgb(189, 235, 253);
+}
+
 h1{
     font-size: 4vw;
 }
@@ -13,12 +22,28 @@ h2{
     font-size: 3vw;
 }
 h5{
-    font-size: 2.5vw;
+    font-size: 2vw;
 }
 
 .try{
     background-color: rgba(239, 250, 255, 0.753);
 }
+
+.floatLeft{
+    float: left;
+    height: 100%;
+    width: 160px;
+    z-index: 1;
+    top: 0;
+    overflow-x: hidden;
+    margin: 10px;
+    padding:20px;
+}
+
+@media screen and (max-height: 450px) {
+    .floatLeft {padding-top: 15px;}
+    .floatLeft {font-size: 18px;}
+  }
 
 .containIt {
     margin: 10px;
@@ -42,6 +67,10 @@ h5{
 .card-body{
     padding: 0px;
     font-size: 1.8vw;
+}
+
+.elI {
+    text-align: center;
 }
 
 /* position/float all the main divs to their appropriate locations */

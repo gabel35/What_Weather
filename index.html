@@ -10,34 +10,38 @@
 </head>
 <body>
     <header class="text-center">What Weather? Where?</header>
-    <!-- make search console with a general div to include new cities-->
-    <div class="form-group container-sm container-md container-lg container-xl containIt">
-        <label for="search">Search for a City:</label>
-        <input type="text" id="city-name" placeholder="(City Name)">
-        <button type="submit" class="btn btn-default" id="magnifying-glass">
-            <i class="fa fa-search"></i> </button>
-    </div>
-
-    <div class="container-sm container-md container-lg container-xl containIt">
-        <div class="row card col-12 try" id="resultDiv"></div>
-        <div class="row">
-            <h2>5-Day Forecast:</h2>
+    <div class="row">
+        <div class="form-group container-sm container-md container-lg container-xl floatLeft">
+            <label for="search">Search for a City:</label>
+            <input type="text" id="city-name" placeholder="(City Name)">
+            <button type="submit" class="btn btn-default" id="magnifying-glass">
+                <i class="fa fa-search"></i>
+            </button>
+            <br>
+            <div class="list-group" id="clickCities">
+                <button type="button" class="list-group-item list-grou-item-action" id="cityNewark">Newark</button>
+            </div>
         </div>
-        <div class="row"> 
-            <div class="card col-2">
-                <div class="card-body" id="cardOne"></div>
-            </div>
-            <div class="card col-2">
-                <div class="card-body" id="cardTwo"></div>
-            </div>
-            <div class="card col-2">
-                <div class="card-body" id="cardThree"></div>
-            </div>
-            <div class="card col-2">
-                <div class="card-body" id="cardFour"></div>
-            </div>
-            <div class="card col-2">
-                <div class="card-body" id="cardFive"></div>
+
+        <div class="container-sm container-md container-lg container-xl containIt">
+            <div class="row card col-12 try" id="resultDiv"></div>
+            <h2 class="row">5-Day Forecast:</h2>
+            <div class="row"> 
+                <div class="card col-2">
+                    <div class="card-body" id="cardOne"></div>
+                </div>
+                <div class="card col-2">
+                    <div class="card-body" id="cardTwo"></div>
+                </div>
+                <div class="card col-2">
+                    <div class="card-body" id="cardThree"></div>
+                </div>
+                <div class="card col-2">
+                    <div class="card-body" id="cardFour"></div>
+                </div>
+                <div class="card col-2">
+                    <div class="card-body" id="cardFive"></div>
+                </div>
             </div>
         </div>
     </div>
