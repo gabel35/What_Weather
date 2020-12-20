@@ -45,7 +45,7 @@ $("#magnifying-glass").on("click", function(event) {
         //current UV index//
         var latItDude = response.coord.lat;
         var lonGitDude = response.coord.lon;
-        var queryUVI = "http://api.openweathermap.org/data/2.5/uvi?lat="+ latItDude + "&lon=" + lonGitDude + "&appid=" + APIKey;
+        var queryUVI = "https://api.openweathermap.org/data/2.5/uvi?lat="+ latItDude + "&lon=" + lonGitDude + "&appid=" + APIKey;
         $.ajax({
             url: queryUVI,
             method: "GET"
@@ -69,7 +69,7 @@ $("#magnifying-glass").on("click", function(event) {
         })
     })
 
-    // var queryForecast = "http://api.openweathermap.org/data/2.5/forecast?q=" + cityName + "&units=imperial&cnt=40&appid=" + APIKey;
+    // var queryForecast = "https://api.openweathermap.org/data/2.5/forecast?q=" + cityName + "&units=imperial&cnt=40&appid=" + APIKey;
     $.ajax({
         url: queryWeatherNow,
         method: "GET"
