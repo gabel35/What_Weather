@@ -1,5 +1,10 @@
 function clear(){
     $("#resultDiv").empty();
+    $("#cardOne").empty();
+    $("#cardTwo").empty();
+    $("#cardThree").empty();
+    $("#cardFour").empty();
+    $("#cardFive").empty();
 }
 
 
