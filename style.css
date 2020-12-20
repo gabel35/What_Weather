@@ -6,13 +6,28 @@ header{
     color: rgb(223, 99, 17);
 }
 
-.card {
+.containIt {
+    margin: 10px;
+    padding: 10px;
+}
+
+.col-2 {
     background-color: rgb(189, 235, 253);
-    color:rgb(223, 99, 17);
+    color:rgb(207, 83, 0);
+    margin: 1%;
 }
 
 .bg-orange{
     background-color:rgb(226, 125, 9);
+}
+
+#uvIndex{
+    text-align: left;
+}
+
+.card-body{
+    padding: 0px;
+    font-size: auto;
 }
     
 /* position/float all the main divs to their appropriate locations */

@@ -23,6 +23,7 @@ $("#magnifying-glass").on("click", function(event) {
         var cityName = response.name;
         var dateNow = new Date(response.dt *1000);
         dateNow = dateNow.toLocaleString();
+        dateNow = dateNow.substr(0, 10)
         console.log(cityName);
         var resultCity = $("<h1>").text(cityName + " (" + dateNow + ")");
         curDiv.append(resultCity);
@@ -68,19 +69,119 @@ $("#magnifying-glass").on("click", function(event) {
         })
     })
 
-    var queryForecast = "http://api.openweathermap.org/data/2.5/forecast?q=" + cityName + "&units=imperial&cnt=5&appid=" + APIKey;
-
+    // var queryForecast = "http://api.openweathermap.org/data/2.5/forecast?q=" + cityName + "&units=imperial&cnt=40&appid=" + APIKey;
     $.ajax({
-        url: queryForecast,
+        url: queryWeatherNow,
         method: "GET"
       })
       .then(function(response) {
-          console.log(queryForecast);
-          console.log(response);
+        var latItDude = response.coord.lat;
+         var lonGitDude = response.coord.lon;
+         var queryForecast = "http://api.openweathermap.org/data/2.5/onecall?lat=" + latItDude + "&lon=" + lonGitDude + "&exclude=current,minutely,hourly,alerts&units=imperial&cnt=5&appid=" + APIKey;
 
-        //   <h5 class="card-title"></h5>
-        //   <p class="card-text"></p>
-      })
+        $.ajax({
+            url: queryForecast,
+            method: "GET"
+        })
+        .then(function(response) {
+            console.log(queryForecast);
+            console.log(response);
+        })
+    //     //First Day Forecast//
+    //     var cardOne = $("#cardOne");
+    //     var dateForOne = new Date(response.list[2].dt *1000);
+    //     dateForOne = dateForOne.toLocaleString();
+    //     dateForOne = dateForOne.substr(0, 8)
+    //     console.log(dateForOne);
+    //     var resultDate = $("<h5>").text(dateForOne);
+    //     cardOne.append(resultDate);
+    //     //temperature//
+    //     var tempForOne = response.list[2].main.temp;
+    //     console.log(tempForOne);
+    //     var resultTempForOne = $("<p>").text("Temp.: " + tempForOne + "°F");
+    //     cardOne.append(resultTempForOne);
+    //     // humidity//
+    //     var humForOne = response.list[2].main.humidity;
+    //     console.log(humForOne);
+    //     var resultHumForOne = $("<p>").text("Humidity: " + humForOne + "%");
+    //     cardOne.append(resultHumForOne);
+
+    //     //Second Day Forecast//
+    //     var cardTwo = $("#cardTwo");
+    //     var dateForTwo = new Date(response.list[9].dt *1000);
+    //     dateForTwo = dateForTwo.toLocaleString();
+    //     dateForTwo = dateForTwo.substr(0, 8)
+    //     console.log(dateForTwo);
+    //     var resultDate = $("<h5>").text(dateForTwo);
+    //     cardTwo.append(resultDate);
+    //     // temperature//
+    //     var tempForTwo = response.list[9].main.temp;
+    //     console.log(tempForTwo);
+    //     var resultTempForTwo = $("<p>").text("Temp.: " + tempForTwo + "°F");
+    //     cardTwo.append(resultTempForTwo);
+    //     // humidity//
+    //     var humForTwo = response.list[9].main.humidity;
+    //     console.log(humForTwo);
+    //     var resultHumForTwo = $("<p>").text("Humidity: " + humForTwo + "%");
+    //     cardTwo.append(resultHumForTwo);
+
+    //     //Third Day Forecast//
+    //     var cardThree = $("#cardThree");
+    //     var dateForThree = new Date(response.list[18].dt *1000);
+    //     dateForThree = dateForThree.toLocaleString();
+    //     dateForThree = dateForThree.substr(0, 8)
+    //     console.log(dateForThree);
+    //     var resultDate = $("<h5>").text(dateForThree);
+    //     cardThree.append(resultDate);
+    //     // temperature//
+    //     var tempForThree = response.list[18].main.temp;
+    //     console.log(tempForThree);
+    //     var resultTempForThree = $("<p>").text("Temp.: " + tempForThree + "°F");
+    //     cardThree.append(resultTempForThree);
+    //     // humidity//
+    //     var humForThree = response.list[18].main.humidity;
+    //     console.log(humForThree);
+    //     var resultHumForThree = $("<p>").text("Humidity: " + humForThree + "%");
+    //     cardThree.append(resultHumForThree);  
+
+    //     //Fourth Day Forecast//
+    //     var cardFour = $("#cardFour");
+    //     var dateForFour = new Date(response.list[27].dt *1000);
+    //     dateForFour = dateForFour.toLocaleString();
+    //     dateForFour = dateForFour.substr(0, 8)
+    //     console.log(dateForFour);
+    //     var resultDate = $("<h5>").text(dateForFour);
+    //     cardFour.append(resultDate);
+    //     // temperature//
+    //     var tempForFour = response.list[27].main.temp;
+    //     console.log(tempForFour);
+    //     var resultTempForFour = $("<p>").text("Temp.: " + tempForFour + "°F");
+    //     cardFour.append(resultTempForFour);
+    //     // humidity//
+    //     var humForFour = response.list[27].main.humidity;
+    //     console.log(humForFour);
+    //     var resultHumForFour = $("<p>").text("Humidity: " + humForFour + "%");
+    //     cardFour.append(resultHumForFour);
+
+    //     //Fifth Day Forecast//
+    //     var cardFive = $("#cardFive");
+    //     var dateForFive = new Date(response.list[36].dt *1000);
+    //     dateForFive = dateForFive.toLocaleString();
+    //     dateForFive = dateForFive.substr(0, 8)
+    //     console.log(dateForFive);
+    //     var resultDate = $("<h5>").text(dateForFive);
+    //     cardFive.append(resultDate);
+    //     // temperature//
+    //     var tempForFive = response.list[36].main.temp;
+    //     console.log(tempForFive);
+    //     var resultTempForFive = $("<p>").text("Temp.: " + tempForFive + "°F");
+    //     cardFive.append(resultTempForFive);
+    //     // humidity//
+    //     var humForFive = response.list[36].main.humidity;
+    //     console.log(humForFive);
+    //     var resultHumForFive = $("<p>").text("Humidity: " + humForFive + "%");
+    //     cardFive.append(resultHumForFive); 
+    })
 });
 
 // have search button call forth the information for the city typed//
