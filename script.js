@@ -52,8 +52,19 @@ $("#magnifying-glass").on("click", function(event) {
         .then(function(response) {
             var uviNow = response.value;
             console.log(uviNow);
-            var resultUVINow = $("<p>").text("UV Index: " + uviNow);
-            curDiv.append(resultUVINow);
+            if (uviNow <=2){
+                var resultUVINow = $("<p class='badge bg-success' id='uvIndex'>").text("UV Index: " + uviNow);
+                curDiv.append(resultUVINow);
+            } else if (uviNow <=5){
+                var resultUVINow = $("<p class='badge bg-warning' id='uvIndex'>").text("UV Index: " + uviNow);
+                curDiv.append(resultUVINow);
+            } else if (uviNow <=7){
+                var resultUVINow = $("<p class='badge bg-orange' id='uvIndex'>").text("UV Index: " + uviNow);
+                curDiv.append(resultUVINow);
+            } else {
+                var resultUVINow = $("<p class='badge bg-danger' id='uvIndex'>").text("UV Index: " + uviNow);
+                curDiv.append(resultUVINow);
+            }
         })
     })
 
@@ -66,6 +77,9 @@ $("#magnifying-glass").on("click", function(event) {
       .then(function(response) {
           console.log(queryForecast);
           console.log(response);
+
+        //   <h5 class="card-title"></h5>
+        //   <p class="card-text"></p>
       })
 });
 

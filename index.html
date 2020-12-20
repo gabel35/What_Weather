@@ -13,13 +13,33 @@
     <!-- make search console with a general div to include new cities-->
     <div class="form-group">
         <label for="search">Search for a City:</label>
-        <input type="text" class="form-control" id="city-name">
+        <input type="text" id="city-name">
         <button type="submit" class="btn btn-default" id="magnifying-glass">
             <i class="fa fa-search"></i> </button>
     </div>
-    <div id="resultDiv"></div>
-    <!-- make large div to hold current weather stats-->
-    <!-- make 5 cards to display for the next 5 days-->
+
+    <div class="container-sm container-md container-lg container-xl">
+        <!-- make large div to hold current weather stats-->
+        <div id="resultDiv"></div>
+        <!-- make 5 cards to display for the next 5 days-->
+        <div class="row">
+            <div class="card col-2" id="cardOne">
+                <div class="card-body"></div>
+            </div>
+            <div class="card col-2" id="cardTwo">
+                <div class="card-body"></div>
+            </div>
+            <div class="card col-2" id="cardThree">
+                <div class="card-body"></div>
+            </div>
+            <div class="card col-2" id="cardFour">
+                <div class="card-body"></div>
+            </div>
+            <div class="card col-2" id="cardFive">
+                <div class="card-body"></div>
+            </div>
+        </div>
+    </div>
    
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="script.js"></script>

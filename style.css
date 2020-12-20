@@ -5,6 +5,15 @@ header{
     font-family:'Lucida';
     color: rgb(223, 99, 17);
 }
+
+.card {
+    background-color: rgb(189, 235, 253);
+    color:rgb(223, 99, 17);
+}
+
+.bg-orange{
+    background-color:rgb(226, 125, 9);
+}
     
 /* position/float all the main divs to their appropriate locations */
 /* have a color style for each type of UV index */
