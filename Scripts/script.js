@@ -27,6 +27,23 @@ $("#magnifying-glass").on("click", function(event) {
         console.log(cityName);
         var resultCity = $("<h1>").text(cityName + " (" + dateNow + ")");
         curDiv.append(resultCity);
+        //current weather (for symbol)//
+        var weatherNow = response.weather[0].main;
+        console.log(weatherNow);
+            if (weatherNow === "Clouds"){
+                var resultWeatherNow = $("<i class='fas fa-cloud'></i>");
+                curDiv.append(resultWeatherNow);
+            } else if (weatherNow === "Snow"){
+                var resultWeatherNow = $("<i class='far fa-snowflake'></i>");
+                curDiv.append(resultWeatherNow);
+            } else if (weatherNow === "Rain"){
+                var resultWeatherNow = $("<i class='fas fa-cloud-showers-heavy'></i>");
+                curDiv.append(resultWeatherNow);
+            } else {
+                var resultWeatherNow = $("<i class='fas fa-sun'></i>");
+                curDiv.append(resultWeatherNow);
+            }
+              
         //current temperature//
         var tempNow = response.main.temp;
         console.log(tempNow);
@@ -94,6 +111,22 @@ $("#magnifying-glass").on("click", function(event) {
             console.log(dateForOne);
             var resultDate = $("<h5>").text(dateForOne);
             cardOne.append(resultDate);
+            //weather (for symbol)//
+            var weatherForOne = response.daily[0].weather[0].main;
+            console.log(weatherForOne);
+            if (weatherForOne === "Clouds"){
+                var resultWeatherForOne = $("<i class='fas fa-cloud'></i>");
+                cardOne.append(resultWeatherForOne);
+            } else if (weatherForOne === "Snow"){
+                var resultWeatherForOne = $("<i class='far fa-snowflake'></i>");
+                cardOne.append(resultWeatherForOne);
+            } else if (weatherForOne === "Rain"){
+                var resultWeatherForOne = $("<i class='fas fa-cloud-showers-heavy'></i>");
+                cardOne.append(resultWeatherForOne);
+            } else {
+                var resultWeatherForOne = $("<i class='fas fa-sun'></i>");
+                cardOne.append(resultWeatherForOne);
+            }            
             //temperature//
             var tempForOne = response.daily[0].temp.day;
             console.log(tempForOne);
@@ -113,6 +146,22 @@ $("#magnifying-glass").on("click", function(event) {
             console.log(dateForTwo);
             var resultDate = $("<h5>").text(dateForTwo);
             cardTwo.append(resultDate);
+            //weather (for symbol)//
+            var weatherForTwo = response.daily[1].weather[0].main;
+            console.log(weatherForTwo);
+            if (weatherForTwo === "Clouds"){
+                var resultWeatherForTwo = $("<i class='fas fa-cloud'></i>");
+                cardTwo.append(resultWeatherForTwo);
+            } else if (weatherForTwo === "Snow"){
+                var resultWeatherForTwo = $("<i class='far fa-snowflake'></i>");
+                cardTwo.append(resultWeatherForTwo);
+            } else if (weatherForTwo === "Rain"){
+                var resultWeatherForTwo = $("<i class='fas fa-cloud-showers-heavy'></i>");
+                cardTwo.append(resultWeatherForTwo);
+            } else {
+                var resultWeatherForTwo = $("<i class='fas fa-sun'></i>");
+                cardTwo.append(resultWeatherForTwo);
+            }            
             // temperature//
             var tempForTwo = response.daily[1].temp.day;
             console.log(tempForTwo);
@@ -132,6 +181,22 @@ $("#magnifying-glass").on("click", function(event) {
             console.log(dateForThree);
             var resultDate = $("<h5>").text(dateForThree);
             cardThree.append(resultDate);
+            //weather (for symbol)//
+            var weatherForThree = response.daily[2].weather[0].main;
+            console.log(weatherForThree);
+            if (weatherForThree === "Clouds"){
+                var resultWeatherForThree = $("<i class='fas fa-cloud'></i>");
+                cardThree.append(resultWeatherForThree);
+            } else if (weatherForThree === "Snow"){
+                var resultWeatherForThree = $("<i class='far fa-snowflake'></i>");
+                cardThree.append(resultWeatherForThree);
+            } else if (weatherForThree === "Rain"){
+                var resultWeatherForThree = $("<i class='fas fa-cloud-showers-heavy'></i>");
+                cardThree.append(resultWeatherForThree);
+            } else {
+                var resultWeatherForThree = $("<i class='fas fa-sun'></i>");
+                cardThree.append(resultWeatherForThree);
+            }            
             // temperature//
             var tempForThree = response.daily[2].temp.day;
             console.log(tempForThree);
@@ -151,6 +216,22 @@ $("#magnifying-glass").on("click", function(event) {
             console.log(dateForFour);
             var resultDate = $("<h5>").text(dateForFour);
             cardFour.append(resultDate);
+            //weather (for symbol)//
+            var weatherForFour = response.daily[3].weather[0].main;
+            console.log(weatherForFour);
+            if (weatherForFour === "Clouds"){
+                var resultWeatherForFour = $("<i class='fas fa-cloud'></i>");
+                cardFour.append(resultWeatherForFour);
+            } else if (weatherForFour === "Snow"){
+                var resultWeatherForFour = $("<i class='far fa-snowflake'></i>");
+                cardFour.append(resultWeatherForFour);
+            } else if (weatherForFour === "Rain"){
+                var resultWeatherForFour = $("<i class='fas fa-cloud-showers-heavy'></i>");
+                cardFour.append(resultWeatherForFour);
+            } else {
+                var resultWeatherForFour = $("<i class='fas fa-sun'></i>");
+                cardFour.append(resultWeatherForFour);
+            }            
             // temperature//
             var tempForFour = response.daily[3].temp.day;
             console.log(tempForFour);
@@ -170,6 +251,22 @@ $("#magnifying-glass").on("click", function(event) {
             console.log(dateForFive);
             var resultDate = $("<h5>").text(dateForFive);
             cardFive.append(resultDate);
+            //weather (for symbol)//
+            var weatherForFive = response.daily[4].weather[0].main;
+            console.log(weatherForFive);
+            if (weatherForFive === "Clouds"){
+                var resultWeatherForFive = $("<i class='fas fa-cloud'></i>");
+                cardFive.append(resultWeatherForFive);
+            } else if (weatherForFive === "Snow"){
+                var resultWeatherForFive = $("<i class='far fa-snowflake'></i>");
+                cardFive.append(resultWeatherForFive);
+            } else if (weatherForFive === "Rain"){
+                var resultWeatherForFive = $("<i class='fas fa-cloud-showers-heavy'></i>");
+                cardFive.append(resultWeatherForFive);
+            } else {
+                var resultWeatherForFive = $("<i class='fas fa-sun'></i>");
+                cardFive.append(resultWeatherForFive);
+            }            
             // temperature//
             var tempForFive = response.daily[4].temp.day;
             console.log(tempForFive);
