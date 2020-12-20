@@ -77,7 +77,7 @@ $("#magnifying-glass").on("click", function(event) {
       .then(function(response) {
         var latItDude = response.coord.lat;
          var lonGitDude = response.coord.lon;
-         var queryForecast = "http://api.openweathermap.org/data/2.5/onecall?lat=" + latItDude + "&lon=" + lonGitDude + "&exclude=current,minutely,hourly,alerts&units=imperial&cnt=5&appid=" + APIKey;
+         var queryForecast = "https://api.openweathermap.org/data/2.5/onecall?lat=" + latItDude + "&lon=" + lonGitDude + "&exclude=current,minutely,hourly,alerts&units=imperial&cnt=5&appid=" + APIKey;
 
         $.ajax({
             url: queryForecast,
@@ -184,8 +184,5 @@ $("#magnifying-glass").on("click", function(event) {
     })
 });
 
-// have search button call forth the information for the city typed//
-// display current day information on the main div//
-//display the next 5 days in their repective card//
 // have the city typed save to the log and appear as a new button //
 // have the button with the city name call the weather stats for that city and display in in the main section//
