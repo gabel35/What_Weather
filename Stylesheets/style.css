@@ -8,11 +8,15 @@ header{
 
 input{
     width: 100%;
-    background-color: rgba(239, 250, 255, 0.753);
+    background-color: rgb(255, 244, 236));
 }
 #magnifying-glass{
     width: 100%;
     background-color: rgb(189, 235, 253);
+}
+
+.cityBtn{
+    background-color: rgb(255, 244, 236);
 }
 
 h1{
@@ -26,7 +30,8 @@ h5{
 }
 
 .try{
-    background-color: rgba(239, 250, 255, 0.753);
+    /* background-color: rgba(239, 250, 255, 0.753); */
+    background-color: rgb(255, 244, 236);
 }
 
 .floatLeft{
