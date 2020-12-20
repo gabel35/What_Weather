@@ -297,7 +297,7 @@ $("#magnifying-glass").on("click", function searchCity (event) {
     
     var APIKey = "9b97bdc0a57667e94c3b8958a0c57307";
     var cityName = $("#city-name").val().trim();
-    var cityButton = $("<button type='button' class='list-group-item list-grou-item-action' id=cityName").text(cityName);
+    var cityButton = $("<button type='button' class='list-group-item list-grou-item-action' id='cityName'>").text(cityName);
     var clickCities = $("#clickCities");
     clickCities.append(cityButton);
     var queryWeatherNow = "https://api.openweathermap.org/data/2.5/weather?q=" + cityName + "&units=imperial&appid=" + APIKey;
