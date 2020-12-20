@@ -279,20 +279,16 @@ $("#magnifying-glass").on("click", function (event) {
         method: "GET"
         })
         .then(function(response) {
-            console.log(queryWeatherNow);
-            console.log(response);
             //name of city and date//
             var curDiv = $("#resultDiv");
             var cityName = response.name;
             var dateNow = new Date(response.dt *1000);
             dateNow = dateNow.toLocaleString();
             dateNow = dateNow.substr(0, 10)
-            console.log(cityName);
             var resultCity = $("<h1>").text(cityName + " (" + dateNow + ")");
             curDiv.append(resultCity);
             //current weather (for symbol)//
             var weatherNow = response.weather[0].main;
-            console.log(weatherNow);
                 if (weatherNow === "Clouds"){
                     var resultWeatherNow = $("<i class='fas fa-cloud'></i>");
                     curDiv.append(resultWeatherNow);
@@ -309,17 +305,14 @@ $("#magnifying-glass").on("click", function (event) {
                 
             //current temperature//
             var tempNow = response.main.temp;
-            console.log(tempNow);
             var resultTempNow = $("<p>").text("Temperature: " + tempNow + "°F");
             curDiv.append(resultTempNow);
             //current humidity//
             var humNow = response.main.humidity;
-            console.log(humNow);
             var resultHumNow = $("<p>").text("Humidity: " + humNow + "%");
             curDiv.append(resultHumNow);
             //current wind speed//
             var windNow = response.wind.speed;
-            console.log(windNow);
             var resultWindNow = $("<p>").text("Wind Speed: " + windNow + " MPH");
             curDiv.append(resultWindNow);
             //current UV index//
@@ -332,7 +325,6 @@ $("#magnifying-glass").on("click", function (event) {
             })
             .then(function(response) {
                 var uviNow = response.value;
-                console.log(uviNow);
                 if (uviNow <=2){
                     var resultUVINow = $("<p class='badge bg-success' id='uvIndex'>").text("UV Index: " + uviNow);
                     curDiv.append(resultUVINow);
@@ -364,19 +356,15 @@ $("#magnifying-glass").on("click", function (event) {
                 method: "GET"
             })
             .then(function(response) {
-                console.log(queryForecast);
-                console.log(response);
                 //First Day Forecast//
                 var cardOne = $("#cardOne");
                 var dateForOne = new Date(response.daily[0].dt *1000);
                 dateForOne = dateForOne.toLocaleString();
                 dateForOne = dateForOne.substr(0, 8)
-                console.log(dateForOne);
                 var resultDate = $("<h5>").text(dateForOne);
                 cardOne.append(resultDate);
                 //weather (for symbol)//
                 var weatherForOne = response.daily[0].weather[0].main;
-                console.log(weatherForOne);
                 if (weatherForOne === "Clouds"){
                     var resultWeatherForOne = $("<div class='elI'><i class='fas fa-cloud'></i></div>");
                     cardOne.append(resultWeatherForOne);
@@ -392,12 +380,10 @@ $("#magnifying-glass").on("click", function (event) {
                 }            
                 //temperature//
                 var tempForOne = response.daily[0].temp.day;
-                console.log(tempForOne);
                 var resultTempForOne = $("<p>").text("Temp.: " + tempForOne + "°F");
                 cardOne.append(resultTempForOne);
                 // humidity//
                 var humForOne = response.daily[0].humidity;
-                console.log(humForOne);
                 var resultHumForOne = $("<p>").text("Humidity: " + humForOne + "%");
                 cardOne.append(resultHumForOne);
 
@@ -406,12 +392,10 @@ $("#magnifying-glass").on("click", function (event) {
                 var dateForTwo = new Date(response.daily[1].dt *1000);
                 dateForTwo = dateForTwo.toLocaleString();
                 dateForTwo = dateForTwo.substr(0, 8)
-                console.log(dateForTwo);
                 var resultDate = $("<h5>").text(dateForTwo);
                 cardTwo.append(resultDate);
                 //weather (for symbol)//
                 var weatherForTwo = response.daily[1].weather[0].main;
-                console.log(weatherForTwo);
                 if (weatherForTwo === "Clouds"){
                     var resultWeatherForTwo = $("<div class='elI'><i class='fas fa-cloud'></i></div>");
                     cardTwo.append(resultWeatherForTwo);
@@ -427,12 +411,10 @@ $("#magnifying-glass").on("click", function (event) {
                 }            
                 // temperature//
                 var tempForTwo = response.daily[1].temp.day;
-                console.log(tempForTwo);
                 var resultTempForTwo = $("<p>").text("Temp.: " + tempForTwo + "°F");
                 cardTwo.append(resultTempForTwo);
                 // humidity//
                 var humForTwo = response.daily[1].humidity;
-                console.log(humForTwo);
                 var resultHumForTwo = $("<p>").text("Humidity: " + humForTwo + "%");
                 cardTwo.append(resultHumForTwo);
 
@@ -441,12 +423,10 @@ $("#magnifying-glass").on("click", function (event) {
                 var dateForThree = new Date(response.daily[2].dt *1000);
                 dateForThree = dateForThree.toLocaleString();
                 dateForThree = dateForThree.substr(0, 8)
-                console.log(dateForThree);
                 var resultDate = $("<h5>").text(dateForThree);
                 cardThree.append(resultDate);
                 //weather (for symbol)//
                 var weatherForThree = response.daily[2].weather[0].main;
-                console.log(weatherForThree);
                 if (weatherForThree === "Clouds"){
                     var resultWeatherForThree = $("<div class='elI'><i class='fas fa-cloud'></i></div>");
                     cardThree.append(resultWeatherForThree);
@@ -462,12 +442,10 @@ $("#magnifying-glass").on("click", function (event) {
                 }            
                 // temperature//
                 var tempForThree = response.daily[2].temp.day;
-                console.log(tempForThree);
                 var resultTempForThree = $("<p>").text("Temp.: " + tempForThree + "°F");
                 cardThree.append(resultTempForThree);
                 // humidity//
                 var humForThree = response.daily[2].humidity;
-                console.log(humForThree);
                 var resultHumForThree = $("<p>").text("Humidity: " + humForThree + "%");
                 cardThree.append(resultHumForThree);  
 
@@ -476,12 +454,10 @@ $("#magnifying-glass").on("click", function (event) {
                 var dateForFour = new Date(response.daily[3].dt *1000);
                 dateForFour = dateForFour.toLocaleString();
                 dateForFour = dateForFour.substr(0, 8)
-                console.log(dateForFour);
                 var resultDate = $("<h5>").text(dateForFour);
                 cardFour.append(resultDate);
                 //weather (for symbol)//
                 var weatherForFour = response.daily[3].weather[0].main;
-                console.log(weatherForFour);
                 if (weatherForFour === "Clouds"){
                     var resultWeatherForFour = $("<div class='elI'><i class='fas fa-cloud'></i></div>");
                     cardFour.append(resultWeatherForFour);
@@ -497,12 +473,10 @@ $("#magnifying-glass").on("click", function (event) {
                 }            
                 // temperature//
                 var tempForFour = response.daily[3].temp.day;
-                console.log(tempForFour);
                 var resultTempForFour = $("<p>").text("Temp.: " + tempForFour + "°F");
                 cardFour.append(resultTempForFour);
                 // humidity//
                 var humForFour = response.daily[3].humidity;
-                console.log(humForFour);
                 var resultHumForFour = $("<p>").text("Humidity: " + humForFour + "%");
                 cardFour.append(resultHumForFour);
 
@@ -511,12 +485,10 @@ $("#magnifying-glass").on("click", function (event) {
                 var dateForFive = new Date(response.daily[4].dt *1000);
                 dateForFive = dateForFive.toLocaleString();
                 dateForFive = dateForFive.substr(0, 8)
-                console.log(dateForFive);
                 var resultDate = $("<h5>").text(dateForFive);
                 cardFive.append(resultDate);
                 //weather (for symbol)//
                 var weatherForFive = response.daily[4].weather[0].main;
-                console.log(weatherForFive);
                 if (weatherForFive === "Clouds"){
                     var resultWeatherForFive = $("<div class='elI'><i class='fas fa-cloud'></i></div>");
                     cardFive.append(resultWeatherForFive);
@@ -532,12 +504,10 @@ $("#magnifying-glass").on("click", function (event) {
                 }            
                 // temperature//
                 var tempForFive = response.daily[4].temp.day;
-                console.log(tempForFive);
                 var resultTempForFive = $("<p>").text("Temp.: " + tempForFive + "°F");
                 cardFive.append(resultTempForFive);
                 // humidity//
                 var humForFive = response.daily[4].humidity;
-                console.log(humForFive);
                 var resultHumForFive = $("<p>").text("Humidity: " + humForFive + "%");
                 cardFive.append(resultHumForFive); 
             })
