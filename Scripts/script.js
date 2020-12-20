@@ -5,6 +5,7 @@ function clear(){
     $("#cardThree").empty();
     $("#cardFour").empty();
     $("#cardFive").empty();
+    $("#city-name").empty();
 }
 
 
