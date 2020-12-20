@@ -270,6 +270,7 @@ $("#magnifying-glass").on("click", function (event) {
     var cityButton = $("<button type='button' class='list-group-item list-group-item-action cityBtn' id='cityUserName'>").text(cityName);
     var clickCities = $("#clickCities");
     clickCities.append(cityButton);
+    
     function searchCity(){
         clear();
         var queryWeatherNow = "https://api.openweathermap.org/data/2.5/weather?q=" + cityName + "&units=imperial&appid=" + APIKey;
