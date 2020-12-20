@@ -1,3 +1,10 @@
-/* style nav bar */
+header{
+    background-color: rgb(189, 235, 253);
+    font-size: larger;
+    font-weight: bold;
+    font-family:'Lucida';
+    color: rgb(223, 99, 17);
+}
+    
 /* position/float all the main divs to their appropriate locations */
 /* have a color style for each type of UV index */
